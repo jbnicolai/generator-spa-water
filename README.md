@@ -1,6 +1,6 @@
 # generator-spa-water [![Build Status](https://secure.travis-ci.org/olivierlesnicki/generator-spa-water.png?branch=master)](https://travis-ci.org/olivierlesnicki/generator-spa-water)
 
-> [Yeoman](http://yeoman.io) generator
+> Custom [Yeoman](http://yeoman.io) generator for AngularJS without Grunt shenanigans.
 
 
 ## Getting Started
