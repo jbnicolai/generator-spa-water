@@ -1,6 +1,15 @@
-{
-  "name": "package",
+{<% var ngVersion = "1.2.16" %>
+  "name": "<%= appname %>",
   "version": "0.0.0",
-  "dependencies": {}
+  "dependencies": {
+  	"angular": "<%= ngVersion %>",
+  	"angular-resource": "<%= ngVersion %>",
+  	"angular-cookies": "<%= ngVersion %>",
+  	"angular-sanitize": "<%= ngVersion %>",
+  	"angular-animate": "<%= ngVersion %>",
+  	"angular-touch": "<%= ngVersion %>",  	
+  	"angular-route": "<%= ngVersion %>",
+    "angular-ui-router": "0.2.11"
+  }
 }
 

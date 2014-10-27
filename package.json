@@ -1,6 +1,6 @@
 {
   "name": "generator-spa-water",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
@@ -17,7 +17,11 @@
     "test": "mocha"
   },
   "files": [
-    "app"
+    "app",
+    "controller",
+    "service",
+    "directive",
+    "style"
   ],
   "keywords": [
     "yeoman-generator"

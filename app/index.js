@@ -5,50 +5,67 @@ var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 
 var SpaWaterGenerator = yeoman.generators.Base.extend({
-  initializing: function () {
+
+  initializing: function() {
+
     this.pkg = require('../package.json');
+
+    this.appname = path.basename(process.cwd());
+    this.appname = this._.camelize(this._.slugify(this._.humanize(this.appname)));
+
   },
 
-  prompting: function () {
+  prompting: function() {
+
     var done = this.async();
 
-    // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the ace SpaWater generator!'
+      'Welcome to the spa water generator!'
     ));
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
+    done();
 
-    this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
-
-      done();
-    }.bind(this));
   },
 
   writing: {
-    app: function () {
-      this.dest.mkdir('app');
-      this.dest.mkdir('app/templates');
 
-      this.src.copy('_package.json', 'package.json');
-      this.src.copy('_bower.json', 'bower.json');
+    app: function() {
+
+      // Create empty folders
+      this.dest.mkdir('img');
+      this.dest.mkdir('css');
+      this.dest.mkdir('js');
+      this.dest.mkdir('js/controllers');
+      this.dest.mkdir('js/directives');
+      this.dest.mkdir('js/services');
+      this.dest.mkdir('templates');
+
+      // Move files across
+      this.directory('less', 'less');
+
+      // Compile and copy
+      // templates
+      this.template('_bower.json', 'bower.json');
+      this.template('index.html', 'index.html');
+      this.template('js/app.js', 'js/app.js');
+      this.template('js/config.js', 'js/config.js');
+
     },
 
-    projectfiles: function () {
+    projectfiles: function() {
+
+      this.src.copy('bowerrc', '.bowerrc');
       this.src.copy('editorconfig', '.editorconfig');
       this.src.copy('jshintrc', '.jshintrc');
+
     }
+
   },
 
-  end: function () {
-    this.installDependencies();
+  end: function() {
+    this.bowerInstall();
   }
+
 });
 
 module.exports = SpaWaterGenerator;
