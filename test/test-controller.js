@@ -13,13 +13,13 @@ describe('spa-water:controller', function () {
       .inDir(path.join(os.tmpdir(), './temp-test'), function(dir){
         fs.copySync(path.join(__dirname, '../templates/index.html'), dir)
       })
-      .withArguments('name', '--force')
+      .withArguments('Controller', '--force')
       .on('end', done);
   });
 
   it('creates files', function () {
     assert.file([
-      'somefile.js'
+      'js/controllers/ControllerCtrl.js'
     ]);
   });
 });
