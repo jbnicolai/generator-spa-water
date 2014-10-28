@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - '0.10'
-before_install:
-  - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-spa-water' ]; then cd .. && eval "mv $currentfolder generator-spa-water" && cd generator-spa-water; fi
+#before_install:
+#  - currentfolder=${PWD##*/}
+#  - if [ "$currentfolder" != 'generator-spa-water' ]; then cd .. && eval "mv $currentfolder generator-spa-water" && cd generator-spa-water; fi
 
