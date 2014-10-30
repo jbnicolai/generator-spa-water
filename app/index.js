@@ -37,11 +37,13 @@ var SpaWaterGenerator = yeoman.generators.Base.extend({
       this.dest.mkdir('js');
       this.dest.mkdir('js/controllers');
       this.dest.mkdir('js/directives');
+      this.dest.mkdir('js/constants');
       this.dest.mkdir('js/services');
       this.dest.mkdir('templates');
 
       // Move files across
       this.directory('less', 'less');
+      this.directory('js/libraries', 'js/libraries');
 
       // Compile and copy
       // templates
@@ -49,6 +51,7 @@ var SpaWaterGenerator = yeoman.generators.Base.extend({
       this.template('index.html', 'index.html');
       this.template('js/app.js', 'js/app.js');
       this.template('js/config.js', 'js/config.js');
+      this.template('js/constants/SETTINGS.js', 'js/constants/SETTINGS.js');
 
     },
 
