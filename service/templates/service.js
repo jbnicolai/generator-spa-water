@@ -1,5 +1,5 @@
 angular
   .module('<%= appname %>')
-  .directive('<%= name %>', function() {
+  .service('<%= name %>', function() {
 
   });

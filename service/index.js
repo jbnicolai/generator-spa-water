@@ -2,6 +2,7 @@
 
 var util = require('util');
 var yeoman = require('yeoman-generator');
+var ScriptBase = require('./../ScriptBase');
 
 var SpaWaterGenerator = yeoman.generators.NamedBase.extend({
   writing: function() {
